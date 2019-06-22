@@ -19,11 +19,11 @@ const charts = () => {
     };
 
     const data = GoogleCharts.api.visualization.arrayToDataTable([
-      ['Year', '@tom', '@mike'],
-      ['2015', 50, 90],
-      ['2016', 40, 80],
-      ['2017', 45, 90],
-      ['2018', 60, 90]
+      ['Year', '@tom', { role: 'annotation' }, { role: 'certainty' }, '@mike', { role: 'certainty' }],
+      ['2015', 50, 'Campaign A', true, 90, true],
+      ['2016', 40, null, true, 80, true],
+      ['2017', 45, null, true, 90, true],
+      ['2018', 60, null, false, 90, false]
     ]);
 
     const chart = new GoogleCharts.api.visualization.LineChart(target);
