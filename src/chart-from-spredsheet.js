@@ -1,21 +1,24 @@
 import { GoogleCharts } from 'google-charts';
+import { spredSheetUrl } from './asset/spred-sheet'
 
 const charts = () => {
   
   const drawChart = () => {
-    const target = document.getElementById('target1');
+    // spredSheetUrlはスプレッドシートのURL
+    const query = new GoogleCharts.api.visualization.Query(spredSheetUrl);
+    query.send(handleQueryResponse);
+  };
+
+  const handleQueryResponse = (response) => {
+    const target = document.getElementById('target6');
     const options = {
       title: 'My Chart',
       width: 500,
       height: 300
     };
 
-    const data = GoogleCharts.api.visualization.arrayToDataTable([
-      ['Language', 'Votes'],
-      ['PHP', 30],
-      ['Ruby', 20],
-      ['Python', 10]
-    ]);
+    const data = response.getDataTable();
+
     const chart = new GoogleCharts.api.visualization.PieChart(target);
     chart.draw(data, options);
   };

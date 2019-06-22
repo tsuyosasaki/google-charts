@@ -62,3 +62,6 @@ typings/
 
 # dist
 dist/
+
+# Private url
+src/asset/spred-sheet.js

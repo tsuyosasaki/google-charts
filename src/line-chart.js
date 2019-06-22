@@ -6,7 +6,6 @@ const charts = () => {
   
   const drawChart = () => {
     const target = document.getElementById('target5');
-    console.log('target', target);
     const options = {
       title: 'My Chart',
       width: 500,

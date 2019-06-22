@@ -1,12 +1,9 @@
 import { GoogleCharts } from 'google-charts';
 
-console.log('test!!!')
-
 const charts = () => {
   
   const drawChart = () => {
     const target = document.getElementById('target4');
-    console.log('target', target);
     const options = {
       title: 'My Chart',
       width: 500,
